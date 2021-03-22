@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+struct node
+{
+    struct node *l;
+    int val;
+    struct node *r;
+}*root=NULL;
+struct node* insertNew(int x)
+{
+    struct node* temp=(struct node*)malloc(sizeof(struct node));
+    temp->l=NULL;
+    temp->val=x;
+    temp->r=NULL;
+    
+    return temp;
+}
+struct node* insert(int x,struct node* root)
+{
+    if(root==NULL)
+    {
+        root=insertNew(x);
+    }
+    else if(x <= root->val)
+    {
+        root->l=insert(x,root->l);
+    }
+    else 
+    {
+        root->r=insert(x,root->r);
+    }
+    return root;
+}
+
+int heightBST(struct node *root)
+{
+    int lh=0,rh=0,h=0;
+    if(root==NULL)
+        return 0;
+    lh=heightBST(root->l);
+    rh=heightBST(root->r);
+    if(lh>rh)
+        h=lh;
+    else 
+        h=rh;
+    return h+1;
+}
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    scanf("%d",&n);
+    while(n--)
+    {
+        int x;
+        scanf("%d",&x);
+        root=insert(x,root);
+    }
+    printf("%d",heightBST(root));
+    return 0;
+}

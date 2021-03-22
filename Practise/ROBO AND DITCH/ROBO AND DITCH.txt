@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    int f,b,fd,bd,s;
+    scanf("%d %d %d %d %d",&f,&b,&fd,&bd,&s);
+    bd=-bd;
+    if(f==b)
+    {
+        if(f>=fd)
+        {
+            printf("F %d",fd*s);
+        }
+        else 
+            printf("NO");
+    }
+    else 
+    {
+        int p=0,t=0;
+        while(1)
+        {
+            if((p+f)>=fd)
+            {
+                printf("F %d",t+(fd-p)*s);
+                       break;
+            }
+            else 
+            {
+             p=p+f;
+             t=t+f;
+            }
+           if((p-b)<=bd)
+            {
+                   printf("B %d",(t-bd+p)*s);
+                   break;
+            }
+              else 
+              {
+                  p=p-b;
+                  t=t+b;
+              }
+                      
+        }
+    }
+    return 0;
+}

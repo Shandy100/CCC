@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    int n,minIndex,i,k,j;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    scanf("%d",&k);
+    for(j=0;j<k;j++)
+    {
+        minIndex=j;
+        for(i=j+1;i<n;i++)
+        {
+            if(a[minIndex]>a[i])
+                minIndex=i;
+        }
+        int t=a[j];
+        a[j]=a[minIndex];
+        a[minIndex]=t;
+    }
+    for(i=0;i<n;i++)
+     printf("%d ",a[i]);
+    return 0;
+}
