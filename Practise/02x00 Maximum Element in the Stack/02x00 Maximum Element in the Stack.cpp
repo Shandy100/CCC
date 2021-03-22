@@ -50,7 +50,6 @@ int main()
         {
             int x;
             scanf("%d",&x);
-            
             if(mtop==-1 || x>=maxstack[mtop])
                 maxstack[++mtop]=x;
             
