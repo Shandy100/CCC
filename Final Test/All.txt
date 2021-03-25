@@ -134,6 +134,9 @@ for(i=lo;i<=hi;i++)
         max=s;
     }
 }
+return max;
+
+}
 
 #Ad rotation
 #Function
