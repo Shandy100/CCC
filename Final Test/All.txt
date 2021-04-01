@@ -457,3 +457,1642 @@ int main()
  para(n);
  return 0;
 }
+
+//Triangle or Not
+//Java7
+
+int n = a.length;
+        String arr[] = new String[n];
+        for(int i=0;i<n;i++){
+            if(a[i]+b[i]>c[i]&&b[i]+c[i]>a[i]&&a[i]+c[i]>b[i]){
+                arr[i]="Yes";
+            }
+            else
+            arr[i]="No";
+        } 
+        return arr;
+
+#Counting bits
+#Python 3
+
+n = int(input().strip())
+
+
+
+def getOneBits(n):
+    res = [int(i) for i in list('{0:0b}'.format(n))]
+    print(res.count(1))
+    for i,x in enumerate(res):
+        if x == 1:
+            print (i+1)
+
+getOneBits(n)
+
+# Adding Two Numbers
+#Python 3
+
+def complement(x):
+    x = x.replace("0","2")
+    x = x.replace("1", "0")
+    x = x.replace("2", "1")
+    return x
+n=int(input())
+x=bin(n).replace("0b", "")
+y = complement(x)
+print(int(y, 2))
+
+#Python 3
+#Last and second last
+
+a_string = input()
+len_of_a = len(a_string)
+new_char_1 = a_string[len_of_a-2]
+new_char_2 = a_string[len_of_a-1]
+new_string = new_char_2+" "+new_char_1
+print(new_string)
+
+//4th Bit
+//C++14
+//Function
+
+int fourthBit(int number) {
+    int bit;
+    for(int i=0;i<4;i++)
+    {
+        bit=number&1;
+        number=number>>1;
+    }
+    
+    return bit;
+}
+
+#Are They pangrams
+#Python 3
+#two test case will fail(iirc)
+
+from collections import Counter
+n=int(input())
+for i in range (0,n):
+    if len(Counter(input().lower())) == 27:
+        print(1,end='')
+    else:
+        print(0,end='')
+
+//FIZZBUZZ
+//C++
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+ int n;
+ cin>>n;
+ for(int i = 1; i <= n; i++)
+ {
+ if(i % 3 == 0 && i % 5 == 0) {
+ cout << "FizzBuzz" << endl;
+ } else if(i % 3 == 0) {
+ cout << "Fizz" << endl;
+ } else if(i % 5 == 0) {
+ cout << "Buzz" << endl;
+ } else {
+ cout << i << endl;
+ }
+ }
+ return 0;
+}
+
+#Arrange Words
+#Python3
+#Function
+
+def arrange(sentence):
+    import re
+    sentence_rgx = re.compile(r'^[A-Z][a-z ]*\.$')
+    _sentence = str(sentence)
+    assert len(_sentence) >= 1 and len(_sentence) <= 10**5
+    assert re.match(sentence_rgx, _sentence)
+    words = [
+        word.lower()[0:len(word)-1] if word[-1] == '.' else word.lower()
+        for word in re.sub(r'[ ]+', ' ', _sentence).split(' ')
+    ]
+    words.sort(key=len)
+    words[0] = f'{words[0][0].upper()}{words[0][1:]}'
+    words[-1] = f'{words[-1]}.'
+    arranged = ' '.join(words)
+    assert re.match(sentence_rgx, arranged)
+    return arranged
+
+//4th Bit
+//Java8
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+class Result {
+
+    /*
+     * Complete the 'fourthBit' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER number as parameter.
+     */
+
+    public static int fourthBit(int number) {
+        String result = "";
+    while (number > 0) 
+    { 
+        result += (number % 2); 
+        number = number / 2; 
+    }
+    char temp = result.charAt(3);
+    int bits = temp - '0';
+    return bits;
+    }
+    // Write your code here
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int number = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int result = Result.fourthBit(number);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+#Duplicated Product
+#Python3
+#Function
+
+def numDuplicates(name, price, weight):
+    # Write your code here
+    q=[]
+    counter=0
+    for a,b,c in zip(name,price,weight):
+        x=(a,b,c)
+        q.append(x)
+    l=len(q)
+    w=set(q)
+    e=len(w)
+    return (l-e)
+
+//Balancing Paarentheses
+//C++14
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+bool check(string str) 
+{ 
+
+    bool temp = true; 
+    int sum = 0; 
+  
+    for (int i = 0; str[i] != '\0'; i++) { 
+  
+        if (str[i] == '(') { 
+            sum++; 
+        } 
+        else { 
+            sum--; 
+        } 
+        if (sum < 0) { 
+            temp = false; 
+            break; 
+        } 
+    } 
+    
+    if (sum != 0) { 
+        temp = false; 
+    } 
+  
+    return temp; 
+} 
+
+string push(string str1, string str2) 
+{
+ if(str2 == "(")
+  str1.push_back('(');
+ else
+  str1.push_back(')');
+ return str1; 
+}
+
+void get(int left, int right, string str)
+{
+ if(left == 0 && right == 0)
+ {
+  if (check(str))
+   cout<<str<<endl;
+ }
+ else
+ {
+  if(left > 0)
+   get(left-1,right,push(str,"("));
+  if(right > 0)
+   get(left,right-1,push(str,")"));
+ }
+}
+
+void para(int n)
+{
+ get(n,n,"");
+}
+
+
+int main()
+{
+ int n;
+ cin>>n;
+ para(n);
+ return 0;
+}
+
+//Counting Closed Paths
+//C++14
+//Function
+
+int closedPaths(int number) {
+    int sum=0,m;          
+    while(number>0)    
+    {    
+        m=number%10;  
+        if(m==0 || m==4 || m==6 || m==9)  
+         {      
+             m=1;
+             sum=sum+m;
+             number=number/10;
+        }
+        else if(m==8)
+        {
+            m=2;
+            sum=sum+m;
+            number=number/10;
+        }    
+        else
+        {
+        number=number/10;    
+        }
+    }    
+      
+    return sum;  
+
+}
+
+#Fibonacci Series
+#Python3
+
+n1, n2 = 0, 1
+count = 0
+#by vb
+if nterms <= 0:
+   print("Invalid")
+else:
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       n1 = n2
+       n2 = nth
+       count += 1
+
+#Count Duplicate elements
+#Python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'countDuplicate' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY numbers as parameter.
+#
+
+def countDuplicate(numbers):
+    # Write your code here
+    sortednum=sorted(numbers)
+    dupes=[]
+    for i in sortednum:
+        if sortednum.count(i)>1:
+            if i not in dupes:
+                dupes.append(i)
+    return len(dupes)
+if name == 'main':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    numbers_count = int(input().strip())
+
+    numbers = []
+
+    for _ in range(numbers_count):
+        numbers_item = int(input().strip())
+        numbers.append(numbers_item)
+
+    result = countDuplicate(numbers)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+#Character reprogramming
+#Python3
+
+def getMaxDeletions(s):
+    # Write your code here
+    countU = 0
+    countR = 0
+    for i in s:
+        if i=='U':
+            countU+=1
+        elif i=='D':
+            countU-=1
+        elif i=='R':
+            countR+=1
+        elif i=='L':
+            countR-=1
+    return len(s)-(abs(countU)+abs(countR))
+
+#Maximum Index
+#Python 3
+#Function
+
+def maxIndex(steps, badIndex):
+    i, j = 0, 1
+    count = 0
+    while count < steps:
+        if i == badIndex:
+            i = i-1
+        else:
+            i = i+j
+            j = j+1
+            count = count +1
+    print(i,count,j)
+    return i
+
+
+//Counting duplicate elements
+//C
+
+#include <stdio.h>
+ 
+int main()
+{
+    int arr[10], i, j, Size, Count = 0;
+    
+ 
+    scanf("%d", &Size);
+    
+   
+    for (i = 0; i < Size; i++)
+    {
+        scanf("%d", &arr[i]);
+       }     
+ 
+    for (i = 0; i < Size; i++)
+    {
+        for(j = i + 1; j < Size; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                Count++;
+                break;
+            }
+        }
+    }
+
+     printf("%d ", Count);
+         
+     return 0;
+}
+
+
+#Count duplicate
+#Python3
+#Function
+
+def countDuplicate(numbers):
+    s=len(numbers)
+    repeated = []
+    for i in range(s):
+        k=i+1
+        for j in range(k,s):
+            if numbers[i]==numbers[j] and numbers[i] not in repeated:
+                repeated.append(numbers[i])
+    return len(repeated)
+
+
+//Cutting Metal Surplus
+//C++14
+
+#include <bits/stdc++.h>
+
+using namespace std;
+string ltrim(const string &);
+string rtrim(const string &);
+int solve(vector<int> &rods, int sz, int cpc, int sl) {
+    int pr = 0;
+    for(int r : rods) {
+        int temp = 0;
+        if(r%sz == 0) {
+            temp += ((r/sz) * sz * sl) - (r/sz - 1) * cpc;
+        } else {
+            temp += ((r/sz) * sz * sl) - (r/sz) * cpc;
+        }
+        if(temp > 0) pr += temp;
+    }
+    return pr;
+}
+int main() {
+    int n;
+    int cpc , sl;
+    cin >> cpc >> sl;
+    cin >> n;
+    vector<int> v(n);
+    int maxlen = 0;
+    for(int i=0; i<n; i++) {
+        cin >> v[i];
+        maxlen = max(maxlen, v[i]);
+    }
+    int ans = INT_MIN;
+    for(int sz=1; sz<=maxlen; sz++) {
+        int prof = solve(v, sz, cpc, sl);
+        ans = max(prof, ans);
+    }
+    cout <<ans << endl;
+    return 0;
+}
+
+#Simple Customer Support Ticketing
+#Python 3
+#Function
+
+def isBalanced(S):
+    stack = []
+    pairs = {"{": "}", "[": "]", "(" : ")"}
+    for i in S:
+        if not stack:
+            stack.append(i)
+        elif i == pairs.get(stack[-1]):
+            stack.pop()
+        else:
+            stack.append(i)
+    return "YES" if not stack else "NO"
+def braces(values):
+    
+    
+    sol=[]     
+    
+    for i in values:
+        sol.append(isBalanced(i))
+    return sol
+
+#Dam Design
+#Python3
+#Function
+def maxHeight(wallPositions, wallHeights):
+    # Write your code here
+    n=len(wallPositions)
+    mud_max=0
+    for i in range(0,n-1):
+        if wallPositions[i]<(wallPositions[i+1]-1):
+            
+            heightDiff=abs(wallHeights[i+1]-wallHeights[i])
+            gapLen=wallPositions[i+1]-wallPositions[i]-1
+            localMax=0
+            if gapLen>heightDiff:
+                low =max(wallHeights[i+1],wallHeights[i])+1
+                remainingGap=gapLen-heightDiff-1
+                localMax=low+remainingGap/2
+            else:
+                localMax=min(wallHeights[i+1],wallHeights[i])+gapLen
+            
+            mud_max=max(mud_max,localMax)
+    
+    return int(mud_max)
+
+wall_pos=[1,10]
+wall_height=[1,5]
+
+print(maxHeight(wall_pos,wall_height))
+
+//Balancd Array
+//C
+//Function and Full program
+
+/*
+int balancedSum(int arr_count, int* arr) {
+    int presum[arr_count],i;
+    presum[0]=arr[0];
+    for(i=1;i<arr_count;i++)
+    presum[i]=presum[i-1] + arr[i];
+    int sufsum[arr_count];
+    sufsum[arr_count-1]=arr[arr_count-1];
+    for(i=arr_count-2;i>=0;i--)
+    sufsum[i]=sufsum[i+1]+arr[i];;
+    for(i=1;i<arr_count-1;i++)
+    {
+        if(presum[i]==sufsum[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+
+}
+*/
+
+
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* readline();
+char* ltrim(char*);
+char* rtrim(char*);
+
+int parse_int(char*);
+
+
+/*
+ * Complete the 'balancedSum' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY arr as parameter.
+ */
+
+int balancedSum(int arr_count, int* arr) {
+    int presum[arr_count],i;
+    presum[0]=arr[0];
+    for(i=1;i<arr_count;i++)
+    presum[i]=presum[i-1] + arr[i];
+    int sufsum[arr_count];
+    sufsum[arr_count-1]=arr[arr_count-1];
+    for(i=arr_count-2;i>=0;i--)
+    sufsum[i]=sufsum[i+1]+arr[i];;
+    for(i=1;i<arr_count-1;i++)
+    {
+        if(presum[i]==sufsum[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+
+}
+int main()
+{
+    FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+    int arr_count = parse_int(ltrim(rtrim(readline())));
+
+    int* arr = malloc(arr_count * sizeof(int));
+
+    for (int i = 0; i < arr_count; i++) {
+        int arr_item = parse_int(ltrim(rtrim(readline())));
+
+        *(arr + i) = arr_item;
+    }
+
+    int result = balancedSum(arr_count, arr);
+
+    fprintf(fptr, "%d\n", result);
+
+    fclose(fptr);
+
+    return 0;
+}
+
+char* readline() {
+    size_t alloc_length = 1024;
+    size_t data_length = 0;
+
+    char* data = malloc(alloc_length);
+
+    while (true) {
+        char* cursor = data + data_length;
+        char* line = fgets(cursor, alloc_length - data_length, stdin);
+
+        if (!line) {
+            break;
+        }
+
+        data_length += strlen(cursor);
+
+        if (data_length < alloc_length - 1 || data[data_length - 1] == '\n') {
+            break;
+        }
+
+        alloc_length <<= 1;
+
+        data = realloc(data, alloc_length);
+
+        if (!data) {
+            data = '\0';
+
+            break;
+        }
+    }
+
+    if (data[data_length - 1] == '\n') {
+        data[data_length - 1] = '\0';
+
+        data = realloc(data, data_length);
+
+        if (!data) {
+            data = '\0';
+        }
+    } else {
+        data = realloc(data, data_length + 1);
+
+        if (!data) {
+            data = '\0';
+        } else {
+            data[data_length] = '\0';
+        }
+    }
+
+    return data;
+}
+
+char* ltrim(char* str) {
+    if (!str) {
+        return '\0';
+    }
+
+    if (!*str) {
+        return str;
+    }
+
+    while (*str != '\0' && isspace(*str)) {
+        str++;
+    }
+
+    return str;
+}
+
+char* rtrim(char* str) {
+    if (!str) {
+        return '\0';
+    }
+
+    if (!*str) {
+        return str;
+    }
+
+    char* end = str + strlen(str) - 1;
+
+    while (end >= str && isspace(*end)) {
+        end--;
+    }
+
+    *(end + 1) = '\0';
+
+    return str;
+}
+
+int parse_int(char* str) {
+    char* endptr;
+    int value = strtol(str, &endptr, 10);
+
+    if (endptr == str || *endptr != '\0') {
+        exit(EXIT_FAILURE);
+    }
+
+    return value;
+}
+
+#Reverse Array Queries
+#Python3
+
+n=int(input())
+a=[]
+for k in range(n):
+    x=float(input())
+    a.append(x)
+turns=0
+l=0
+r=n-1
+a.sort(reverse=True)
+while l<=r:
+    if a[l]+a[r]<=3.0:
+        l+=1
+        r-=1
+        turns+=1
+    else:
+        l+=1
+        turns+=1
+print(turns)
+
+//Purchasing Supplies
+//Java 8
+
+import java.util.Scanner;
+public class Supplies 
+{
+ public static void main(String[] args) 
+ {
+  // size - number of scenarios.
+  int size;
+  // Creating object for Scanner class.
+  Scanner scan = new Scanner(System.in);
+  // Reading input from the user.
+  size = scan.nextInt();
+  // Creating a String array of size 'size'.
+  String[] s = new String[size];
+  // Reading the new line to avoid error while reading 
+  // multiple lines using .nextLine().
+  scan.nextLine();
+  
+  // This for loop runs for size times.
+  for(int i = 0; i < size; i++)
+  {
+   // Reading the line and assigning it to the String array.
+   s[i] = scan.nextLine();
+  }
+  
+  // This for loop runs for size times.
+  for(int i = 0; i < size; i++)
+  {
+   // Passing the String to the function.
+   maximumContainers(s[i]);
+  }
+  scan.close();
+ }
+ 
+ public static void maximumContainers(String s)
+ {
+  // Splitting the String separated by spaces and assigning it to str array.
+  String[] str = s.split(" ");
+  // First String = n, second = cost, third = m.
+  // Converting String to int using Integer.parseInt().
+  int n = Integer.parseInt(str[0]);
+  int cost = Integer.parseInt(str[1]);
+  int m = Integer.parseInt(str[2]);
+  
+  // total - total number of containers.
+  int total = 0;
+  // container holds the number of containers at present.
+  // Buying containers.
+  int container = (int) (n / cost);
+  
+  // Adding the containers to the total.
+  total += container;
+  // This loops runs till container present
+  // is less than m(containers required to get a free container).
+  while(container >= m)
+  {
+   // Adding the new containers bought by replacing.
+   total += (int)(container / m);
+   // Remaining containers if any.
+   int temp = container % m;
+   // Updating the containers.
+   container = temp + (int)(container / m);
+  }
+  // printing the total.
+  System.out.println(total);
+ }
+}
+
+//Suspicious activity from logs
+//C++14
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+
+using namespace std;
+
+// required function
+vector<string> processLogs(vector<string> logs, int threshold) {
+    map<int, int> mp; // map to count transactions of each user
+
+    // loop through the logs
+    for(auto x: logs) {
+        // extract users from string
+        int sp1 = -1, sp2 = -1;
+        for(int i = 0; i < x.size(); ++i) {
+            if(x[i] == ' ') {
+                if(sp1 == -1) sp1 = i;
+                else sp2 = i;
+            } 
+        }    
+        int from = stoi(x.substr(0, sp1));
+        int to = stoi(x.substr(sp1 + 1, sp2 - sp1 - 1));
+
+        // cout << from << " " << to << " " << endl;
+        // increse count for different users
+        if(to == from) {
+            mp[to]++;
+        }
+        else {
+            mp[to]++;
+            mp[from]++;
+        }
+    }
+    vector<string> ans;
+    // loop through the map and extract users with count > threshold
+    for(auto x: mp) {
+        if(x.second >= threshold) {
+            ans.push_back(to_string(x.first));
+        }
+    }
+    // no need to sort as map is already sorted a/c to key
+    return ans;
+}
+
+// driver program
+int main() {
+    // process user input
+    int n, threshold;
+    cin >> n;
+    cin.ignore();
+    vector<string> logs(n);
+
+    for(int i = 0; i < n; ++i) {
+        string temp;
+        getline(cin, temp);
+        logs[i] = temp;
+    }
+    cin >> threshold;
+
+    // call the function
+    vector<string> ans = processLogs(logs, threshold);
+    // print the output
+    for(auto s: ans) cout << s << endl;
+}
+
+
+//Duplicate products
+//Python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'numDuplicates' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. STRING_ARRAY name
+#  2. INTEGER_ARRAY price
+#  3. INTEGER_ARRAY weight
+#
+
+def numDuplicates(name, price, weight):
+    # Write your code here
+    q=[]
+    counter=0
+    for a,b,c in zip(name,price,weight):
+        x=(a,b,c)
+        q.append(x)
+    l=len(q)
+    w=set(q)
+    e=len(w)
+    return (l-e)
+
+
+    
+        
+        
+
+if name == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    name_count = int(input().strip())
+
+    name = []
+
+    for _ in range(name_count):
+        name_item = input()
+        name.append(name_item)
+
+    price_count = int(input().strip())
+
+    price = []
+
+    for _ in range(price_count):
+        price_item = int(input().strip())
+        price.append(price_item)
+
+    weight_count = int(input().strip())
+
+    weight = []
+
+    for _ in range(weight_count):
+        weight_item = int(input().strip())
+        weight.append(weight_item)
+
+    result = numDuplicates(name, price, weight)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close() 
+
+//Bucket Fill
+//C++14
+
+
+void solve(vector<string>& picture, int row, int col, int m, int n,vector<vector<bool>> &visited, char prev){
+    if(row<0 or row>=m or col<0 or col>=n or visited[row][col] or picture[row][col]!=prev){return;}
+    visited[row][col] = true;
+    solve(picture,row-1,col,m,n,visited,picture[row][col]);
+    solve(picture,row+1,col,m,n,visited,picture[row][col]);
+    solve(picture,row,col-1,m,n,visited,picture[row][col]);
+    solve(picture,row,col+1,m,n,visited,picture[row][col]);
+    
+} 
+
+int strokesRequired(vector<string> picture) {
+    int m = picture.size();
+    int n = picture[0].size();
+    vector<vector<bool>> visited(m, vector<bool>(n,false));
+    int c=0;
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            if(!visited[i][j]){
+                c++;
+                solve(picture,i,j,m,n,visited,picture[i][j]);
+            }
+        }
+    }
+    return c;
+
+#Python3
+#Adding Two Numbers
+
+def addNumbers(a, b):
+    total = a+b
+    if total >= 0:
+
+        return int(total)
+
+    else:
+
+      return int(total) - 1
+
+//Minimum difference sum
+//C++14
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++)
+        cin >> arr[i];
+        
+    sort(arr, arr+n);       
+    
+    
+    int sum = 0;
+    
+    for(int i=0; i<n-1; i++)
+    {
+        sum = sum + abs(arr[i]-arr[i+1]);
+    }
+    
+    cout << sum;
+    return 0;
+}
+
+#Dam design
+#Python3
+#Function
+:mud = 0    
+    for i in range(len(wallPositions)-1):
+        if(wallPositions[i] < wallPositions[i+1]-1):
+            height = abs(wallHeights[i+1]-wallHeights[i])
+            gap = wallPositions[i+1] - wallPositions[i]-1
+            temp = 0
+            if gap > height:
+                count = max(wallHeights[i+1], wallHeights[i])+1
+                gap_left = gap - height -1
+                temp = count + gap_left/2
+            else:
+                temp = min(wallHeights[i+1], wallHeights[i])+gap
+            mud = max(mud, temp)    
+    return int(mud)
+
+#Condensed List
+#Python3
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+class SinglyLinkedListNode:
+    def init(self, node_data):
+        self.data = node_data
+        self.next = None
+
+class SinglyLinkedList:
+    def init(self):
+        self.head = None
+        self.tail = None
+
+    def insert_node(self, node_data):
+        node = SinglyLinkedListNode(node_data)
+
+        if not self.head:
+            self.head = node
+        else:
+            self.tail.next = node
+
+        self.tail = node
+
+def print_singly_linked_list(node, sep, fptr):
+    while node:
+        fptr.write(str(node.data))
+
+        node = node.next
+
+        if node:
+            fptr.write(sep)
+
+
+#
+# Complete the 'condense' function below.
+#
+# The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+# The function accepts INTEGER_SINGLY_LINKED_LIST head as parameter.
+#
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+
+def condense(head):
+    previous = None
+    current = head
+    s = set()
+    while current:
+        
+        if current.data in s:
+            previous.next = current.next
+        else:
+            s.add(current.data)
+            previous = current
+ 
+        current = previous.next
+ 
+    return head
+    # Write your code here
+if name == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    head_count = int(input().strip())
+
+    head = SinglyLinkedList()
+
+    for _ in range(head_count):
+        head_item = int(input().strip())
+        head.insert_node(head_item)
+
+    result = condense(head.head)
+
+    print_singly_linked_list(result, '\n', fptr)
+    fptr.write('\n')
+
+    fptr.close()
+
+//Zig zag
+//C++14
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+struct node
+{
+    int l;
+    int r;
+    //int data;
+}a[10000];
+int stack1[1000],stack2[10000];
+int top1=-1,top2=-1;
+void push1(int v)
+{
+    stack1[++top1]=v;
+}
+void push2(int v)
+{
+    stack2[++top2]=v;
+}
+int pop1()
+{
+    return stack1[top1--];
+}
+int pop2()
+{
+    return stack2[top2--];
+}
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n,k;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        a[i].l=0;
+        a[i].r=0;
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        int d,c;
+        char f;
+        scanf("%d %d %c",&c,&d,&f);
+        if(f=='L')
+            a[c].l=d;
+        else
+            a[c].r=d;
+    }
+    push1(1);
+   // printf("%d\t%d\n",top1,top2);
+    while(top1>=0 || top2>=0)
+    {
+        while(top1>=0)
+        {
+            k=pop1();
+            printf("%d ",k);
+            if(a[k].l!=0)
+            push2(a[k].l);
+            if(a[k].r!=0)
+                push2(a[k].r);
+        }
+       /* for(int i=top2;i!=-1;i--)
+            printf("\nstack %d \n",stack2[i]);
+        */
+        while(top2>=0)
+        {
+            k=pop2();
+            printf("%d ",k);
+            if(a[k].r!=0)
+                push1(a[k].r);
+            if(a[k].l!=0)
+                push1(a[k].l);
+        }
+    }
+
+    return 0;
+}
+
+//Shortest Substring Containing Characters
+//C++14(Doesnt work)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAX_CHARS = 256;
+string findSubString(string str)
+{
+  int n = str.length();
+
+  int dist_count = 0;
+  unordered_map<int, int> hash_map;
+  for (int i = 0; i < n; i++) 
+        {
+    hash_map[str[i]]++;
+  }
+
+  dist_count = hash_map.size();
+  int size = INT_MAX;
+  string res;
+
+  for (int i = 0; i < n; i++) 
+        {
+    int count = 0;
+    int visited[256] = { 0 };
+    string sub_str = "";
+    for (int j = i; j < n; j++) 
+    {
+      if (visited[str[j]] == 0) 
+      {
+        count++;
+        visited[str[j]] = 1;
+      }
+      sub_str += str[j];
+      if (count == dist_count)
+        break;
+    }
+    if (sub_str.length() < size && count == dist_count)
+    {
+      res = sub_str;
+      size=res.length();
+    }
+  }
+  cout<<size;
+}
+
+// Driver Code
+int main()
+{
+  string str;
+  cin>>str;
+  findSubString(str);
+  return 0;
+}
+
+#Product Sort
+#Python3
+
+from collections import Counter
+
+n=int(input())
+
+lst=[]
+
+for i in range(n):
+
+    a=int(input())
+
+    lst.append(a)
+
+b=max(Counter(lst).values())
+
+c=list(Counter(lst).values())
+
+d=dict(Counter(lst))
+
+e=list(Counter(lst).keys())
+
+for i in range(1,b+1):
+
+    p=0
+
+    ls=[]
+
+    while(p<len(c)):
+
+        if c[p]==i:
+
+            ls.append(e[p])
+
+        p+=1
+
+    ls.sort()
+
+    for j in ls:
+
+        for k in range(i):
+
+            print(j)
+
+//Maximize the value in c++ 
+//C++14
+//Function
+
+vector<int> rearrange(vector<int> arr){
+    sort(arr.begin(), arr.end());
+    int n = arr.size();
+    if(n<3){
+        return arr;
+    }
+    vector<int> res;
+    int k = 0;
+    int j = n%2 == 0?((n-1)/2):(n/2);
+    res.push_back(arr[j++]);
+    res.push_back(arr[j++]);
+    for(int i=2; i<n; i++){
+        if(i%2==0){
+            res.push_back(arr[k++]);
+        }else{
+            res.push_back(arr[j++]);
+        }
+    }
+    return res;
+}
+
+
+//Is Possible
+//C++14
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+/*
+ * Complete the 'isPossible' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts following parameters:
+ *  1. INTEGER a
+ *  2. INTEGER b
+ *  3. INTEGER c
+ *  4. INTEGER d
+ */
+ int dp[1005][1005];
+int solve(int row, int col, int x, int y){
+    if(row==x and col==y){
+        return 1;
+    }
+    if(row<0 or row>=1005 or col<0 or col>=1005){
+        return 0;
+    }
+    if(dp[row][col]!=-1){return dp[row][col];}
+    
+    return dp[row][col] = solve(row+col,col,x,y) + solve(row,col+row,x,y);
+}
+string isPossible(int a, int b, int c, int d) {
+ memset(dp, -1, sizeof(dp));
+ if(solve(a,b,c,d)){return "Yes";}
+ return "No";
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string a_temp;
+    getline(cin, a_temp);
+
+    int a = stoi(ltrim(rtrim(a_temp)));
+
+    string b_temp;
+    getline(cin, b_temp);
+
+    int b = stoi(ltrim(rtrim(b_temp)));
+
+    string c_temp;
+    getline(cin, c_temp);
+
+    int c = stoi(ltrim(rtrim(c_temp)));
+
+    string d_temp;
+    getline(cin, d_temp);
+
+    int d = stoi(ltrim(rtrim(d_temp)));
+
+    string result = isPossible(a, b, c, d);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
+
+#Max Index
+#Python3
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'maxIndex' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER steps
+#  2. INTEGER badIndex
+#
+def maxIndex(steps, badIndex):
+    i, j = 0, 1
+    count = 0
+    while count < steps:
+        if i == badIndex:
+            i = i-1
+        else:
+            i = i+j
+            j = j+1
+            count = count +1
+    print(i,count,j)
+    return i
+  
+
+if name == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    steps = int(input().strip())
+
+    badIndex = int(input().strip())
+
+    result = maxIndex(steps, badIndex)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+#Character reprogramming
+#Python3
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'getMaxDeletions' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts STRING s as parameter.
+#
+
+def getMaxDeletions(s):
+    # Write your code here
+    countU = 0
+    countR = 0
+    for i in s:
+        if i=='U':
+            countU+=1
+        elif i=='D':
+            countU-=1
+        elif i=='R':
+            countR+=1
+        elif i=='L':
+            countR-=1
+    return len(s)-(abs(countU)+abs(countR))
+if name == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = getMaxDeletions(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+//Balancing Parentheses
+//C++14
+// C++ Program to find minimum number of '(' or ')'
+// must be added to make Parentheses string valid.
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to return required minimum number
+int minParentheses(string p)
+{
+
+	// maintain balance of string
+	int bal = 0;
+	int ans = 0;
+
+	for (int i = 0; i < p.length(); ++i) {
+
+		bal += p[i] == '(' ? 1 : -1;
+
+		// It is guaranteed bal >= -1
+		if (bal == -1) {
+			ans += 1;
+			bal += 1;
+		}
+	}
+
+	return bal + ans;
+}
+
+// Driver code
+int main()
+{
+
+	string p;
+	cin>>p;
+
+	// Function to print required answer
+	cout << minParentheses(p);
+
+	return 0;
+}
+
+#Alphabetically Smallest String Builder
+#python3
+
+lst=[]
+a=int(input())
+for i in range (a): #appends all string to list
+    b=input()
+    lst.append(b)
+#print(lst)
+l="" #program to convert list to string
+for i in lst: #1
+        l += i#2
+#print(l)
+c=sorted(l) #sorts and print as list
+#print(c)
+d=""
+for i in c: #program to convert list to string
+        d += i
+print(d)
+
+//Balance The parentheses
+//C++
+//to print minimum number of bracket to balance
+#include <bits/stdc++.h>
+using namespace std;
+int minParentheses(string p)
+{
+
+	// maintain balance of string
+	int bal = 0;
+	int ans = 0;
+
+	for (int i = 0; i < p.length(); ++i) {
+
+		bal += p[i] == '(' ? 1 : -1;
+
+		// It is guaranteed bal >= -1
+		if (bal == -1) {
+			ans += 1;
+			bal += 1;
+		}
+	}
+
+	return bal + ans;
+}
+int main()
+{
+
+	string p;
+	cin>>p;
+	cout << minParentheses(p);
+
+	return 0;
+}
