@@ -1,0 +1,54 @@
+There's a Bug who loves strings but hates vowels. He wants to delete all the vowels from a string. Can you do it for him?
+
+Input Format
+
+One line of input that contains the string S.
+
+Constraints
+
+1 <= |S| <= 10^5
+
+Output Format
+
+One string, the string S without vowels.
+
+Sample Input 0
+
+bugshatesvowels
+
+Sample Output 0
+
+bgshtsvwls
+
+#include <stdio.h>
+#include <string.h>
+int check_vowel(char);
+int main()
+{
+  char s[100000], t[100000];
+  int c, d = 0;
+  gets(s);
+
+  for (c = 0; s[c] != '\0'; c++) {
+    if (check_vowel(s[c]) == 0) {     // If not a vowel
+      t[d] = s[c];
+      d++;
+   }
+  }
+
+  t[d] = '\0';
+
+  strcpy(s, t);  // We are changing initial string. This is optional.
+
+  printf("%s", s);
+
+  return 0;
+}
+
+int check_vowel(char t)
+{
+  if (t == 'a' || t == 'A' || t == 'e' || t == 'E' || t == 'i' || t == 'I' || t =='o' || t=='O' || t == 'u' || t == 'U')
+    return 1;
+
+  return 0;
+}
