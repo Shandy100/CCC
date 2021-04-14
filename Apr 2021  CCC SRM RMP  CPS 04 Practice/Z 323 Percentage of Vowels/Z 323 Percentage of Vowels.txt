@@ -1,0 +1,48 @@
+Bunny has a string. Bunny likes vowel and dislikes consonants so he would like to know what percentage of the characters in the string are vowels.
+
+Input Format
+
+Only one line of input that contains one string.
+
+Constraints
+
+One string that only contains lowercase or uppercase letters. The length of this string will not be greater than 100.
+
+Output Format
+
+Output the required percentage upto 4 decimal places.
+
+Sample Input 0
+
+bunnyyisastringlover
+
+Sample Output 0
+
+30.0000
+
+Explanation 0
+
+total characters : 20 vowels : 6 percentage = (6/20)*100 = 30
+
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char line[150];
+    float vowels=0,len;
+    fgets(line, sizeof(line), stdin);
+    len=strlen(line);
+    
+
+    for (int i = 0; line[i] != '\0'; ++i) {
+        if (line[i] == 'a' || line[i] == 'e' || line[i] == 'i' ||
+            line[i] == 'o' || line[i] == 'u' || line[i] == 'A' ||
+            line[i] == 'E' || line[i] == 'I' || line[i] == 'O' ||
+            line[i] == 'U') {
+            ++vowels;
+        }
+    }
+
+    printf("%.4f",(vowels/len)*100);
+    return 0;
+}
+

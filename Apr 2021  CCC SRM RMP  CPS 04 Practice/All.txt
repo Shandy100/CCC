@@ -1,0 +1,89 @@
+//I M17 - Reverse Vowels
+
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char line[150];
+    float vowels=0,len;
+    fgets(line, sizeof(line), stdin);
+    len=strlen(line);
+    
+
+    for (int i = 0; line[i] != '\0'; ++i) {
+        if (line[i] == 'a' || line[i] == 'e' || line[i] == 'i' ||
+            line[i] == 'o' || line[i] == 'u' || line[i] == 'A' ||
+            line[i] == 'E' || line[i] == 'I' || line[i] == 'O' ||
+            line[i] == 'U') {
+            ++vowels;
+        }
+    }
+
+    printf("%.4f",(vowels/len)*100);
+    return 0;
+}
+
+
+//I M01 - Lex Characters Unique
+
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+    char str[10000];
+    scanf("%s",str);
+    char temp;
+    int i, j;
+    int n = strlen(str);
+    for (i = 0; i < n-1; i++) {
+        for (j = i+1; j < n; j++) {
+            if (str[i] > str[j]) {
+                    temp = str[i];
+                    str[i] = str[j];
+                    str[j] = temp;
+            }
+        }
+    }
+ int len = strlen(str);
+        int tail = 1;
+        for (i = 1; i < len; ++i)
+        {
+                int j;
+                for (j = 0; j < tail; ++j)
+                {
+                        if (str[i] == str[j])
+                                break;
+                }
+                if (j == tail)
+                {
+                        str[tail] = str[i];
+                        ++tail;
+                }
+        }
+        str[tail] = 0;
+        printf("%s",str);
+    return 0;
+}
+
+//Z 323 Percentage of Vowels
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char line[150];
+    float vowels=0,len;
+    fgets(line, sizeof(line), stdin);
+    len=strlen(line);
+    
+
+    for (int i = 0; line[i] != '\0'; ++i) {
+        if (line[i] == 'a' || line[i] == 'e' || line[i] == 'i' ||
+            line[i] == 'o' || line[i] == 'u' || line[i] == 'A' ||
+            line[i] == 'E' || line[i] == 'I' || line[i] == 'O' ||
+            line[i] == 'U') {
+            ++vowels;
+        }
+    }
+
+    printf("%.4f",(vowels/len)*100);
+    return 0;
+}
