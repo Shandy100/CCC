@@ -87,3 +87,37 @@ int main() {
     printf("%.4f",(vowels/len)*100);
     return 0;
 }
+
+//I M19 - String Sans Accent
+#include <stdio.h>
+#include <string.h>
+int check_vowel(char);
+int main()
+{
+  char s[100000], t[100000];
+  int c, d = 0;
+  gets(s);
+
+  for (c = 0; s[c] != '\0'; c++) {
+    if (check_vowel(s[c]) == 0) {     // If not a vowel
+      t[d] = s[c];
+      d++;
+   }
+  }
+
+  t[d] = '\0';
+
+  strcpy(s, t);  // We are changing initial string. This is optional.
+
+  printf("%s", s);
+
+  return 0;
+}
+
+int check_vowel(char t)
+{
+  if (t == 'a' || t == 'A' || t == 'e' || t == 'E' || t == 'i' || t == 'I' || t =='o' || t=='O' || t == 'u' || t == 'U')
+    return 1;
+
+  return 0;
+}
