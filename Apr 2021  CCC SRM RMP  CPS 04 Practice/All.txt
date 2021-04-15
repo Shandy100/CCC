@@ -504,3 +504,512 @@ printf("%d",sum);
 
 	return 0;
 }
+
+//Task 3.11 : Nested For Loops
+
+#include <stdio.h>
+
+int main()
+{
+	int i, j, n;
+	scanf("%d", &n);
+	//Replace the _ with appropriate code to get the desired output.
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j <n ; j++)
+		{
+			printf("*");
+            
+		}printf("\n");
+	}
+}
+
+
+//Task 3.12 : Nested For Loops - II
+
+#include <stdio.h>
+int main() {
+   int i, j, rows;
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("*");
+      }
+      printf("\n");
+   }
+   return 0;
+}
+
+//Z 311 FACTORS OF X
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{   
+int i, n,t;
+   scanf("%d", &t);
+   while(t--)
+   {
+   scanf("%d", &n);
+   for(i=1;i<=n;i++)
+   if(n%i==0)
+   {
+   printf("%d ",i);
+   }
+   printf("\n");
+   }
+    return 0;
+}
+
+
+//Z 432 Contest Participation
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+int a,b;
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    scanf("%d %d", &a, &b);
+    if(a<b)
+    {printf("Performed well");}
+    else if(a==b)
+    {printf("Did not participate");}
+    else
+    {printf("Did not perform well");}
+    return 0;
+}
+
+
+//All the factors
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+      int i, n;
+   scanf("%d", &n);
+   for (i = 1; i <= n; ++i) 
+   {if(n%i==0)
+   printf("%d ",i);}
+    return 0;
+}
+
+
+//Task 2.11 Grading System 1
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int a;
+    scanf("%d",&a);
+    if(a<=100 && a>=76)
+    printf("A");
+    else if(a<=75 && a>=51)
+    printf("B");
+    else if(a<=50 && a>=26)
+    printf("C");
+    else
+    printf("D");
+    
+    return 0;
+}
+
+
+//Task 2.12 : The Switch-Case Statement
+
+#include <stdio.h>
+
+int main()
+{
+	char ch;
+	scanf("%c", &ch);
+	switch(ch)
+	{
+		case 'a' : printf("vowel"); break;
+		case 'e' : printf("vowel"); break;
+		//write the cases for i, o, and u.
+        case 'i' : printf("vowel"); break;
+        case 'o' : printf("vowel"); break;
+        case 'u' : printf("vowel"); break;
+	
+
+		default : printf("not vowel"); break;
+	}	
+	return 0;
+}
+
+
+//Z 412 The Slopes of Line Segments
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+float a,b,c,d,e,f,g,h,j,i;
+scanf("%f %f %f %f",&a,&b,&c,&d);
+scanf("%f %f %f %f",&f,&g,&h,&i);
+e=(d-b)/(c-a);
+j=(i-g)/(h-f);
+if(e==j)
+printf("yes");
+else
+printf("no");
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
+
+//Z 433 Parliament Square
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,m,a;
+    long int i,j;
+    scanf("%d%d%d",&n,&m,&a);
+    i=n/a;
+    j=m/a;
+    if(i*a!=n)
+    i++;
+    if(j*a!=m)
+    j++;
+    printf("%ld",i*j);
+}
+
+
+//Task 3.5 : Prime or Not
+
+#include<stdio.h>
+int main()
+{
+int n,i;
+scanf("%d",&n);
+for(i = 2; i <= n/2; i++)
+{
+if(n % i ==0)
+{
+break;
+}
+}
+if(n!=1){
+if(i > n/2)
+printf("yes");
+else
+printf("no");}
+else
+printf("no");
+return 0;
+}
+
+//Task 3.6 : The Break Statement
+
+#include <stdio.h>
+
+int is_prime(int num)
+{
+	if (num < 2) return 0;
+	int i;
+	for (i = 2; i < num; i++)
+	{
+		if (num % i == 0) return 0;
+	}
+	return 1;
+}
+int main()
+{
+	int i, num;
+	scanf("%d", &num);
+	for (i = num + 1; i>num; i++)
+	{
+		if (is_prime(i) == 1)//break the loop once youve found the prime
+		{
+			printf("%d",i);break;
+		
+		}
+	}
+	return 0;
+}
+
+
+//Task 3.7 : The Continue Statement
+#include <stdio.h>
+
+int main()
+{
+	int i, N;
+	scanf("%d", &N);
+	for (i = 1; i <= N; i++)
+	{
+		if (i % 3 == 0)        continue;//add a continue statement to move on to the next iteration
+		{
+
+		}
+		printf("%d ", i);
+	}
+return 0;
+}
+
+//Task 3.9 : Goto and Label
+
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	scanf("%d", &num);
+	while (num > 0)
+	{
+		if (num % 2 == 1)goto label; //write the goto statement here to skip to the end
+		printf("%d ", num);
+		num = num/2;
+	}
+	label : printf("Process Complete");
+	return 0;
+}
+
+
+//A 14 : Task 2.6 : Check if a Given Number is Even or Odd
+
+#include <stdio.h>
+
+int main()
+{
+	int var1;
+	scanf("%d", &var1);
+	if (var1%2==0)//Replace the '_' with appropriate conditions and statements
+	{
+		printf("EVEN");
+	}
+	else
+	{
+		printf("ODD");
+	}
+	return 0;
+}
+
+
+//Task 2.5 : The If-Else If Statement
+
+
+#include <stdio.h>
+
+int main()
+{
+    int var1, var2;
+    //input var1 and var2, compare them and print result accordingly
+    scanf("%d %d",&var1,&var2);
+    if(var1>var2)
+    {printf("value1 is greater");}
+    else if(var1==var2)
+    printf("both values are equal");
+    else
+    {printf("value2 is greater");}
+    return 0;
+}
+
+
+//A 129 : Other Operators
+
+#include <stdio.h>
+
+int main()
+{
+	int var1, var2, add, sub, mul, div;
+	//Input values of var1 and var2
+	//Calculate values of add, sub, mul and div
+scanf("%d%d",&var1,&var2);
+printf("%d ",var1+var2);
+printf("%d ",var1-var2);
+printf("%d ",var1*var2);
+printf("%d",var1/var2);
+	
+
+
+
+	//printf("%d %d %d %d", add, sub, mul, div);
+	return 0;
+}
+
+//A 128 : The Ternary Operator
+
+#include <stdio.h>
+
+int main()
+{
+	int var;
+	scanf("%d", &var);
+	//replace the '_' with appropriate condition	
+	(var%5==0 && var%2==0) ? printf("Last digit zero") : printf("Last digit non-zero");
+	return 0;
+}
+
+//A 127 : The Modulus Operator
+
+#include <stdio.h>
+
+int main()
+{
+	int var1, var2, answer;
+	//Take as input var1 and var2 and store the remainder in answer
+scanf("%d%d",&var1,&var2);
+printf("%d",var1%var2);
+
+	//printf("%d", answer);
+	return 0;
+}
+
+
+//A 126 : Precedence
+#include <stdio.h>
+
+int main()
+{
+	int A, B, C, D, ans;
+	scanf("%d%d%d%d", &A, &B, &C, &D);
+	//change the below expresssion so it does the addition first and then the multiplication
+	//hint : use parenthesis
+	ans = (A + B) * (C + D);
+	printf("%d", ans);
+	return 0;
+}
+
+
+//A 125 : The Bitwise Shift Operators
+
+#include <stdio.h>
+
+int main()
+{	
+	int var, multiplied_by_2, divided_by_2;
+	scanf("%d", &var);
+	//assign values to divided and multiplied using bitwise shift operators
+	divided_by_2= var/2;
+	multiplied_by_2=var*2;
+	printf("%d ", divided_by_2);
+	printf("%d", multiplied_by_2);
+	return 0;
+}
+
+//A 124 : Basic Bitwise Operators
+
+#include <stdio.h>
+
+int main()
+{
+	int var1, var2, ans_and, ans_or, ans_xor;
+    scanf("%d %d",&var1,&var2);
+	//Take as input var1 and var2 and print the result of their bitwise operations
+printf("%d\n",var1&var2);
+printf("%d\n",var1|var2);
+printf("%d",var1^var2);
+	return 0;
+}
+
+//A 123 : The Logical NOT Operator
+
+#include <stdio.h>
+
+int main()
+{
+	int var;
+	scanf("%d", &var);
+	if (var % 2 != 1) 
+	{
+		printf("Number is Even");
+	}
+	else
+	{
+		printf("Number is Odd");
+	}
+	return 0;
+}
+
+//A 122 : Logical OR Operator
+
+#include <stdio.h>
+
+int main()
+{
+	int var1, var2;
+	//Input var1 and var2
+	scanf("%d%d",&var1,&var2);
+	//Replace the _ with appropriate conditions
+	if (var2%3==0 || var1%2==0) printf("YES");
+	else  printf("NO");
+	return 0;
+}
+
+//A 121 : Logical AND Operator
+
+#include <stdio.h>
+
+int main()
+{
+	int var;
+    scanf("%d",&var);
+    if(var%2==0 && var%3==0)
+    {printf("YES");}
+    else
+    printf("NO");
+
+	return 0;
+}
+
+//A 116 : The SizeOf Operator
+
+#include <stdio.h>
+
+int main()
+{
+    //size of 
+    int a =sizeof(char);
+    int b =sizeof(float);
+    int c =sizeof(long long int);
+    int d =sizeof(double);
+    int int_size = sizeof(int);
+    //your code here
+    
+    printf("%d ",a);
+    printf("%d ",int_size);
+    printf("%d ",b);
+    printf("%d ",c);
+    printf("%d",d);
+    return 0;
+}
+
+//A 113 : Modifiers
+
+#include <stdio.h>
+
+int main()
+{
+	long long int var1, var2, sum;
+	//input values of var1 and var2 as long long integers and print their sum;
+scanf("%lld %lld",&var1,&var2);
+sum=var1+var2;
+
+
+	printf("%lld", sum);	
+	return 0;
+}
