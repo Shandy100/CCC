@@ -1,0 +1,56 @@
+/*
+A prime number is a number that is divisible by only two numbers, 1 and itself. 1 is neither a prime number nor a composite number. Hence, 2 is the first prime number, 3 is the second prime number and so on..
+
+Your task is to write a program that takes as input an integer N and prints the Nth prime number.
+
+Input
+Input consists of a single integer N
+
+Output
+Print the Nth prime number
+
+Sample Input 0
+
+1
+Sample Output 0
+
+2
+Sample Input 1
+
+2
+Sample Output 1
+
+3
+
+*/
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int isprime(int n)
+{
+    if(n==1)return 0;
+    for(int i=2;i<=sqrt(n);i++)
+    {
+        if(n%i==0)return 0;
+    }
+    return 1;
+}
+int main() {
+    int n;
+    scanf("%d",&n);
+    if(n==1)printf("2");
+    else{
+         int res=0,i=3,c=1;
+         while(c<n)
+         {
+             if(isprime(i))
+             {
+                 c++;res=i;
+             }
+             i=i+2;
+         }
+        printf("%d",res);
+    }
+    return 0;
+}
