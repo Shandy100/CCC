@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <string.h>
+/*
+You are given N tasks.
+
+The ith task has deadline Ti and generates a profit of Pi. Every task takes one second to complete. Time starts at t = 0.
+
+Your task is to find an optimal way to do the tasks so as to generate the maximum amount of total profit.
+
+You have to print the maximum possible profit that you were able to make.
+
+INPUT
+First line contains the number of test cases T.
+For every test case :
+First line contains the integer N.
+Next line contains N integers denoting the array T.
+Last line contains N integers denoting the array P.
+
+OUTPUT
+Print one number, the maximum profit that you can make for every test case on a new line
+
+NOTES
+1 ≤ N, Ti, Pi ≤ 1000
+
+Sample Input 0
+
+2
+4
+4 1 1 1
+20 10 40 30
+5
+2 1 2 1 3
+100 19 27 25 15
+Sample Output 0
+
+60
+142
+*/
+
+
+#include <math.h>
+#include <stdlib.h>
+struct task{
+    int d,p;
+};
+int cmp(struct task *a, struct task*b)
+{
+    return b->p - a->p;
+}
+int main() {
+    int t; scanf("%d",&t);
+    while(t--)
+    {
+        int n;scanf("%d",&n);
+        struct task a[n];
+        for(int i=0;i<n;i++)scanf("%d",&a[i].d);
+        for(int i=0;i<n;i++)scanf("%d",&a[i].p);
+        int ts[1001]={0};
+        qsort(a,n,sizeof(struct task),cmp);
+        for(int i=0;i<n;i++)
+        {
+            if(ts[a[i].d]==0)ts[a[i].d]=a[i].p;
+            else{
+                for(int j=a[i].d-1;j>=1;j--)
+                {
+                    if(ts[j]==0){ts[j]=a[i].p; break;}
+                }
+            }
+        }
+        int sum=0;
+        for(int i=1;i<=1000;i++)sum+=ts[i];
+        printf("%d\n",sum);
+    }
+    return 0;
+}
