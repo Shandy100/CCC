@@ -1,0 +1,48 @@
+/*
+
+You are given an array A of size N.
+You are also givena number K.
+Let us define what K-Divisibility of an array means :
+       K-Divisibility of an array is the number of unordered pairs (i,j) such that Ai + Aj is divisible by K.
+
+Your task is to find and print the K-Divisibility of the given array A.
+
+INPUT
+First line contains two integers, size of array N and the value K.
+Second line contains N space separated integers, ith of which denotes Ai.
+
+OUTPUT
+Print one value, the K-Divisibility of the array.
+
+CONSTRAINTS
+1 ≤ N, K, Ai ≤ 106
+
+Sample Input 0
+
+6 5
+1 2 3 4 5 6
+Sample Output 0
+
+3
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+long int a[1000000];
+int main() {
+    int n,k,v; scanf("%d%d",&n,&k);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&v);
+        a[v%k]++;
+    }
+    long c=(a[0]*(a[0]-1))/2;
+    for(int i=1; i<=k/2 && i!=k-i ; i++)
+        c=c+a[i]*a[k-i];
+    if(k%2==0)
+        c=c+a[k/2]*(a[k/2]-1)/2;
+    printf("%ld",c);
+}

@@ -1,0 +1,67 @@
+/*
+A postfix expression is of the form instead of the traditional infix expression which follows the form .
+
+Your task is to write a program that takes advantage of the stack data structure and calculates the value of a given postfix expression.
+
+INPUT
+
+First line contains one string denoting the postfix expression.
+Second line contains space separated integers, each integer denotes the value of a variable, where the first integer denotes the value of the 'A', second integer denotes the value of 'B' and so on.
+It is guaranteed that there will be as many integers on second line as there are distinct variables in the postfix expression and that they will be the initial characters of the capital letter alphabet.
+
+Look at the sample Input/Output for clarity
+
+OUTPUT
+
+Output one number denoting the final value of the expression.
+
+Sample Input 0
+
+AB+
+3 7
+Sample Output 0
+
+10
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int s[1005],top=-1;
+int main() {
+    char a[1005];
+    scanf("%s",a);
+    int i=0;
+    while(a[i])
+    {
+        if(a[i]>=65 && a[i]<=90)
+        {
+            int x;scanf("%d",&x);
+            s[++top]=x;   
+        }
+        else if(a[i]=='+')
+        {
+            int b=s[top--],a=s[top--];
+            s[++top]=a+b;
+        }
+        else if(a[i]=='-')
+        {
+            int b=s[top--],a=s[top--];
+            s[++top]=a-b;
+        }
+        else if(a[i]=='*')
+        {
+            int b=s[top--],a=s[top--];
+            s[++top]=a*b;
+        }
+        else if(a[i]=='/')
+        {
+            int b=s[top--],a=s[top--];
+            s[++top]=a/b;
+        }
+        i++;
+    }
+    printf("%d",s[top]);
+    return 0;
+}

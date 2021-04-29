@@ -1,0 +1,50 @@
+/*
+Ramesh is learning to chat on Facebook and he wants to say “Goodbye” (no space between Good and bye) to his friend Suresh. Ramesh typed the word w. It is considered that Ramesh managed to say “Goodbye” if several letters can be deleted from the typed word w so that it results in the word "Goodbye". For example, if Ramesh types the word "btaGpotodbqqyeekje", it will be considered that he said “Goodbye”, and if he types "pngodtbeyz", it will be considered that he didn't manage to say Goodbye. Determine whether Ramesh managed to say “Goodbye” by the given word w to Suresh.
+
+Input
+Input contains one string.
+Input string consists of small and capital alphabets only.
+
+Output
+Output 'Yes' if he managed to say goodbye. else output 'No'.
+
+Sample Input 0
+
+btaGpotodbqqyeekje
+Sample Output 0
+
+Yes
+*/
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int max(int x,int y)
+{
+    if(x>=y)return x;
+    else return y;
+}
+
+int main() {
+    char a[1005];scanf("%s",a);
+    char b[]="Goodbye";
+    int n=strlen(a),m=7;
+    int dp[n+1][m+1];
+    for(int i=0;i<=n;i++)
+    {
+        for(int j=0;j<=m;j++)
+        {
+            if(i==0)dp[i][j]=0;
+            else if(j==0)dp[i][j]=0;
+            else if(a[i-1]==b[j-1])dp[i][j]=dp[i-1][j-1]+1;
+            else dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+    
+        }
+    }
+    if(dp[n][m]==7)
+        printf("Yes");
+    else printf("No");
+    return 0;
+}

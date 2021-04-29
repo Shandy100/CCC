@@ -1,0 +1,46 @@
+/*
+Given an array A = {a1, a2, a3..} of N elements, find the maximum possible sum of a
+
+Contiguous subarray
+Non-contiguous (not necessarily contiguous) subarray.
+Empty subarrays/subsequences should not be considered.
+
+Input Format
+
+First line of the input has an integer T. T cases follow.
+Each test case begins with an integer N. In the next line, N integers follow representing the elements of array A.
+
+Constraints
+
+1 <= T <= 10
+1 <= N <= 10^5
+-10^4 <= ai <= 10^4
+
+The subarray and subsequences you consider should have at least one element
+
+Output Format
+
+Two, space separated, integers denoting the maximum contiguous and non-contiguous subarray. At least one integer should be selected and put into the subarrays (this may be required in cases where all elements are negative).
+
+Sample Input 0
+
+2
+4
+1 2 3 4
+6
+2 -1 2 3 4 -5
+Sample Output 0
+
+10 10
+10 11
+*/
+
+for _ in range(int(input())):
+    _, arr = input(), [int(n) for n in input().split()]
+    h = m = t = arr[0]
+    for ind, n in enumerate(arr):
+        if ind == 0: continue
+        t = max(t, n, t + n)
+        h = max(n, h + n)
+        m = max(m, h)
+    print(m, t)
