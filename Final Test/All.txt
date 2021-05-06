@@ -730,7 +730,7 @@ int main()
 
 //Counting Closed Paths
 //C++14
-//Function
+//Function and Full program
 
 int closedPaths(int number) {
     int sum=0,m;          
@@ -757,6 +757,52 @@ int closedPaths(int number) {
       
     return sum;  
 
+}
+
+//Full program
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+/*
+ * Complete the 'closedPaths' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER number as parameter.
+ */
+
+int main()
+{
+    int n,sum=0,m;    
+    //cout<<"Enter a number: ";    
+    cin>>n;    
+    while(n>0)    
+    {    
+        m=n%10;  
+        if(m==0 || m==4 || m==6 || m==9)  
+         {      
+             m=1;
+             sum=sum+m;
+             n=n/10;
+        }
+        else if(m==8)
+        {
+            m=2;
+            sum=sum+m;
+            n=n/10;
+        }    
+        else
+        {
+        n=n/10;    
+        }
+    }    
+    cout<<sum<<endl;    
+    return 0;  
 }
 
 #Fibonacci Series
