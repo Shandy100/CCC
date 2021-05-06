@@ -1428,7 +1428,7 @@ if name == '__main__':
 
 //Bucket Fill
 //C++14
-
+//Function
 
 void solve(vector<string>& picture, int row, int col, int m, int n,vector<vector<bool>> &visited, char prev){
     if(row<0 or row>=m or col<0 or col>=n or visited[row][col] or picture[row][col]!=prev){return;}
@@ -2044,6 +2044,7 @@ int main()
 
 #Alphabetically Smallest String Builder
 #python3
+
 def lexSmallest(a, n):
     a.sort(reverse = False)
     answer = ""
@@ -2127,3 +2128,572 @@ def efficientJanitor(weight):
         	  i+=1
     	 j -= 1
          return count
+
+#coloring grid
+#python3
+
+
+import math
+import os
+import random
+import re
+import sys
+def countPatterns(n):
+    num=(24**n)-(9*(8**n))+(18*(3**n)+9*(2**n))-24
+    re=num%((10**9)+7)
+    return re
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    result = countPatterns(n)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+#Growth in 2 Dimension
+#java8
+#function
+  public static long countMax(List<String> upRight) {
+        long minRow = Long.MAX_VALUE;
+        long minCol = Long.MAX_VALUE;
+        for (String str: upRight) {
+            long row = Long.parseLong(str.split(" ")[0]);
+            long col = Long.parseLong(str.split(" ")[1]);
+            minRow = Math.min(minRow, row);
+            minCol = Math.min(minCol, col);
+        }
+        return minRow * minCol;
+    }
+
+
+#full program
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program2 {
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        List<String> list = new ArrayList<>();
+        list.add("1 4");
+        list.add("2 3");
+        list.add("4 1");
+        System.out.println(countMax(list));
+    }
+
+    public static long countMax(List<String> upRight) {
+        int count = 1000; //If i increased count, this will give heap space error.
+        long[][] grid = new long[count][count];
+        long max = 0;
+
+
+
+      public static long countMax(List<String> upRight) {
+        long minRow = Long.MAX_VALUE;
+        long minCol = Long.MAX_VALUE;
+        for (String str: upRight) {
+            long row = Long.parseLong(str.split(" ")[0]);
+            long col = Long.parseLong(str.split(" ")[1]);
+            minRow = Math.min(minRow, row);
+            minCol = Math.min(minCol, col);
+        }
+        return minRow * minCol;
+    }
+
+        return max;
+    }
+}
+
+#Count Duplicate elements
+#Python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'countDuplicate' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY numbers as parameter.
+#
+
+def countDuplicate(numbers):
+    # Write your code here
+    sortednum=sorted(numbers)
+    dupes=[]
+    for i in sortednum:
+        if sortednum.count(i)>1:
+            if i not in dupes:
+                dupes.append(i)
+    return len(dupes)
+if name == 'main':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    numbers_count = int(input().strip())
+
+    numbers = []
+
+    for _ in range(numbers_count):
+        numbers_item = int(input().strip())
+        numbers.append(numbers_item)
+
+    result = countDuplicate(numbers)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+//Programming contest
+//C++14
+
+int minimizeBias(vector<int> ratings) {
+    int n=ratings.size();
+    sort(ratings.begin(),ratings.end());
+    int diff=0;
+    for(int i=1;i<n;i+=2){
+        diff+=abs(ratings[i]-ratings[i-1]);
+    }
+    return diff;
+}
+
+#Last and Second-Last
+#java8
+#function
+
+public static String lastLetters(String word) {
+    // Write your code here
+    String ans = word.charAt(word.length()-1)+" "+word.charAt(word.length()-2);
+    return ans;
+    }
+
+#Balancing parentheses
+#Python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'getMin' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts STRING s as parameter.
+#
+
+
+def getMin(s):
+    def minAddToMakeValid():
+        S=str(s)
+        ans = bal = 0
+        for symbol in S:
+            bal += 1 if symbol == '(' else -1
+        # It is guaranteed bal >= -1
+            if bal == -1:
+                ans += 1
+                bal += 1
+        return ans + bal
+    return minAddToMakeValid()
+    
+if _name_ == '_main_':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = getMin(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+#Find the factor
+#Python3
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'pthFactor' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts following parameters:
+#  1. LONG_INTEGER n
+#  2. LONG_INTEGER p
+#
+
+def factors(n):
+    results = set()
+    for i in range(1, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            results.add(i)
+            results.add(int(n/i))
+    return results
+
+def pthFactor(n, k):
+    r=0
+    results=sorted(factors(n))
+    if len(results)<k:
+        r=0
+    else:
+        r=(results[k-1])
+    return(r)
+if name == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    p = int(input().strip())
+
+    result = pthFactor(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+//Bucket fill
+//C++14
+//function
+
+
+int strokesRequired(vector<string> picture) {
+    int m = picture.size();
+    int n = picture[0].size();
+    vector<vector<bool>> visited(m, vector<bool>(n, false));
+    int count = 0;
+    for(int i = 0; i< m ; i++){
+        for(int j = 0; j < n; j++){
+            if(!visited[i][j]){
+                count++;
+                queue<pair<int, int>>q;
+                visited[i][j] = true;
+                q.push({i, j});
+                while(!q.empty()){
+                    pair<int , int> curr = q.front();
+                    q.pop();
+                    int r = curr.first, c = curr.second;
+                    
+                    if(r-1 >= 0){
+                        if(!visited[r-1][c] && picture[r-1][c] == picture[r][c]){
+                            q.push({r-1, c});
+                            visited[r-1][c] = true;
+                        }
+                    }
+                    if(c-1 >= 0){
+                        if(!visited[r][c-1] && picture[r][c-1] == picture[r][c]){
+                            q.push({r, c-1});
+                            visited[r][c-1] = true;
+                        }
+                    }
+                    if(c+1 < n){
+                        if(!visited[r][c+1] && picture[r][c+1] == picture[r][c]){
+                            q.push({r, c+1});
+                            visited[r][c+1] = true;
+                        }
+                    }
+                    if(r+1 < m){
+                        if(!visited[r+1][c] && picture[r+1][c] == picture[r][c]){
+                            q.push({r+1, c});
+                            visited[r+1][c] = true;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    return count;
+}
+
+#No Pairs ALlowed
+#Java8
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int len = in.nextInt();
+        String s = in.next();
+        int maxPattern = 0;
+        
+        if(s.length() == 1)
+        {
+            System.out.println(maxPattern);
+            System.exit(0);
+        }
+        
+        for(int i = 0; i < 26; i++)
+        {
+            nextLetter:
+            for(int j = i + 1; j < 26; j++)
+            {
+                char one = (char) ('a' + i); 
+                char two = (char) ('a' + j); 
+                char lastSeen = '\u0000';
+                int patternLength = 0;
+                
+                for(char letter : s.toCharArray())
+                {
+                    if(letter == one || letter == two)
+                    {
+                        if(letter == lastSeen)
+                        {
+                            continue nextLetter;
+                        }
+                                                patternLength++;
+                        lastSeen = letter;
+                    }
+                }                
+                maxPattern = (patternLength > maxPattern) ? patternLength : maxPattern; 
+                
+            }
+        }
+        
+        System.out.println(maxPattern);
+        
+    }
+}
+
+
+//Product defect
+//C++14
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+
+/*
+ * Complete the 'largestArea' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY samples as parameter.
+ */
+
+int largestArea(vector<vector<int>> matrix) 
+{
+    int rows = matrix.size();
+        if(rows==0)
+            return 0;
+        int cols = matrix[0].size();
+        
+        vector<vector<int>> dp(rows+1,vector<int>(cols+1,0));
+        int largest = 0;
+        for(int i=1;i<=rows;++i)
+        {
+            for(int j=1;j<=cols;++j)
+            {
+                if(matrix[i-1][j-1]==1)
+                {
+                    dp[i][j] = 1 + min(dp[i-1][j],min(dp[i][j-1],dp[i-1][j-1]));
+                    if(largest < dp[i][j])
+                        largest = dp[i][j];
+                        
+                }
+            }
+        }
+        return largest;
+    
+}
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string samples_rows_temp;
+    getline(cin, samples_rows_temp);
+
+    int samples_rows = stoi(ltrim(rtrim(samples_rows_temp)));
+
+    string samples_columns_temp;
+    getline(cin, samples_columns_temp);
+
+    int samples_columns = stoi(ltrim(rtrim(samples_columns_temp)));
+
+    vector<vector<int>> samples(samples_rows);
+
+    for (int i = 0; i < samples_rows; i++) {
+        samples[i].resize(samples_columns);
+
+        string samples_row_temp_temp;
+        getline(cin, samples_row_temp_temp);
+
+        vector<string> samples_row_temp = split(rtrim(samples_row_temp_temp));
+
+        for (int j = 0; j < samples_columns; j++) {
+            int samples_row_item = stoi(samples_row_temp[j]);
+
+            samples[i][j] = samples_row_item;
+        }
+    }
+
+    int result = largestArea(samples);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
+
+vector<string> split(const string &str) {
+    vector<string> tokens;
+
+    string::size_type start = 0;
+    string::size_type end = 0;
+
+    while ((end = str.find(" ", start)) != string::npos) {
+        tokens.push_back(str.substr(start, end - start));
+
+        start = end + 1;
+    }
+
+    tokens.push_back(str.substr(start));
+
+    return tokens;
+}
+
+#Sign in Sign out
+#python3
+#function
+def processLogs(logs, maxSpan):
+    l={}
+    c={}
+    k=l.keys()
+    for i in logs:
+        i=i.split()
+        if i[0] in k:
+            if i[2]=="sign-in":
+                l[i[0]]-=int(i[1])
+                c[i[0]]+=1
+            else:
+                l[i[0]]+=int(i[1])
+                c[i[0]]+=1
+        else:
+            l[i[0]]=0
+            c[i[0]]=0
+            if i[2]=="sign-in":
+                l[i[0]]-=int(i[1])
+                c[i[0]]+=1
+            else:
+                l[i[0]]+=int(i[1])
+                c[i[0]]+=1
+    return l,c
+logs_count = int(input().strip())
+logs = []
+for _ in range(logs_count):
+    logs_item = input()
+    logs.append(logs_item)
+maxSpan = int(input().strip())
+result,d = processLogs(logs, maxSpan)
+l=[]
+for i in result.keys():
+    if result[i]<=maxSpan and d[i]==2:
+        l.append(i)
+l.sort(key=lambda item: (len(item), item)) 
+for i in l:
+    print(i)
+
+//Alphabetically smallest string builder
+//C++14
+//Function
+
+bool compare(string a, string b)
+{
+    return (a+b < b+a);
+}
+
+string smallestString(vector<string> a,int n) {
+    sort(a.begin(), a.end(), compare);
+    string answer = "";
+    for (int i = 0; i < n; i++)
+        answer += a[i];
+
+    return answer;
+}
+//put this line instead of 'string result = smallestString(substrings)' in the main function 
+string result = smallestString(substrings,substrings_count);
+
+#Count Duplicate elements
+#Python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'countDuplicate' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY numbers as parameter.
+#
+
+def countDuplicate(numbers):
+    # Write your code here
+    sortednum=sorted(numbers)
+    dupes=[]
+    for i in sortednum:
+        if sortednum.count(i)>1:
+            if i not in dupes:
+                dupes.append(i)
+    return len(dupes)
+if name == 'main':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    numbers_count = int(input().strip())
+
+    numbers = []
+
+    for _ in range(numbers_count):
+        numbers_item = int(input().strip())
+        numbers.append(numbers_item)
+
+    result = countDuplicate(numbers)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
