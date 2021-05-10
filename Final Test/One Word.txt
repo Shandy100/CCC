@@ -1,0 +1,238 @@
+5. C: Find the Output
+Consider the following C code snippet:
+#include <stdio.h>
+
+int main() {
+    printf("%s", 5 + "Facsimile");
+}
+Mile
+6. Find the Output
+
+#include <stdio.h>
+int main()
+{
+            int n=0;
+            printf("%d",n++?++n:n++);
+return 0;
+}
+1
+7. Find the Output
+
+#include <stdio.h>
+int main()
+{
+            while(printf(1+"%d",10));
+return 0;
+}
+Infinite loop
+8. Which of the following function operators cannot be over loaded?
+
+Which of the function operator cannot be over loaded?
+?:
+
+
+
+
+
+
+9. Find the Output
+
+#include <stdio.h>
+int main()
+{
+            struct {
+            int n:0;
+            }a;
+            printf("%d",a.n);
+return 0;
+}
+Compile time error
+10. Find the Output
+
+What is the output of the following code if input is 10+10 20+30:
+#include <stdio.h>
+int main()
+{
+            int a,b;
+            scanf("%d %d",&a,&b);
+            printf("%d %d",a,b);
+return 0;
+}
+10 10
+11. How do you declare a pointer to an array of pointers to int?
+
+How do you declare a pointer to an array of pointers to int?
+None of these
+12. Templates
+Will the following code compile correctly?  If not, which of the given changes needs to be incorporated for the code to compile successfully? 
+
+template <typename T>
+class Foo {
+    T tVar;
+    public:
+        Foo(T t): tVar(t) {}
+};
+
+class FooDerived: public Foo<std::string>{};
+
+int main() {
+    FooDerived d;
+    return 0;
+}
+Compiler Error: FooDerived is a non-template class that derives from a template class. It should be changed
+13. Find the Output
+
+#include <stdio.h>
+
+int main()
+
+{
+
+            printf("Computer\br");
+
+return 0;
+
+}
+Computer
+14. Predict the output of the following snippet.
+
+#include <stdio.h>
+
+int main(){
+    int x = 4,*y;
+    y = &x;(*y)++;
+    printf("%d",*y);
+return 0;
+}
+5 
+
+15. Find the Output
+
+Guess the output if input is 3+4 4+5
+#include <stdio.h>
+int main()
+{
+         int a,b;
+         scanf("%d %d",&a,&b);
+         printf("%d %d",a,b);
+return 0;
+}
+
+3 4
+16.Will the code compile?
+
+#include <stdio.h>
+class String{
+        public:
+                explicit String(char ch , int n = 1){}
+                String(const char *p){}
+        private :
+                void operator=(const char*){}
+};
+
+
+int main(){
+        String x = "aaa";
+        return 0;
+}
+the code will compile without any errors
+17. What is the output of the following?
+
+int x = 0; 
+for (x=1; x<4; x++); 
+printf("x=%d\n", x);
+x=4
+18. Predict the output of the following snippet.
+
+A two dimensional array A is declared as int A[4][2]={0}. 
+What values would be printed after execution the following statement? 
+
+printf("%d",sizeof(A)); 
+
+Assume g++ compiler
+32
+19. Repetitive Functions
+
+Will the following code compile? If not, what will be the error?
+ 
+extern void print(int *ia, int sz);void print(int *ia, int sz);
+
+it will compile correctly
+20. Find the Output
+Guess the output
+#include <stdio.h>
+int main()
+{
+            int n=16;
+            printf("%d",n>>1);
+return 0;
+}
+8
+
+
+
+
+21. Predict the output
+What will be the output of the following code:
+ 
+class A1 {
+        public:
+                int upper;
+                int lower;
+                A1( int i ) : lower( i ), upper( lower+1 ) { };
+};
+
+int main(){
+        A1 a(5);
+        cout << a.lower << " " << a.upper << endl;
+        return 0;
+}
+
+5 garbage value
+
+22. Try and Catch
+What will be printed on the console?
+ 
+void f() throw (float) { 
+    throw 10.0f;
+}
+int main() {
+    try {
+        std::cout << 'A';
+        f();
+        std::cout << 'B';
+    } catch(...) {
+        std::cout << 'C';
+    }
+    return 0;
+}
+AC
+
+
+
+23. Find the Output
+#include<stdio.h>
+int main(){
+   int a = 320;
+   char *ptr;
+   ptr =( char *)&a;
+   printf("%d ",*ptr);
+   return 0;
+}
+64
+24. Find the Output
+Guess the output
+#include <stdio.h>
+int fun(int);
+int main()
+{
+            int n=0;
+            printf("%d",fun(n++));
+return 0;
+}
+int fun(int n)
+{
+return n++;
+}
+0
+
