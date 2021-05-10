@@ -67,8 +67,8 @@ return 0;
 
 11. How do you declare a pointer to an array of pointers to int?
 
-How do you declare a pointer to an array of pointers to int?
 None of these
+
 12. Templates
 Will the following code compile correctly?  If not, which of the given changes needs to be incorporated for the code to compile successfully? 
 
@@ -85,7 +85,9 @@ int main() {
     FooDerived d;
     return 0;
 }
+
 Compiler Error: FooDerived is a non-template class that derives from a template class. It should be changed
+
 13. Find the Output
 
 #include <stdio.h>
@@ -99,7 +101,9 @@ int main()
 return 0;
 
 }
+
 Computer
+
 14. Predict the output of the following snippet.
 
 #include <stdio.h>
@@ -110,6 +114,7 @@ int main(){
     printf("%d",*y);
 return 0;
 }
+
 5 
 
 15. Find the Output
@@ -125,6 +130,7 @@ return 0;
 }
 
 3 4
+
 16.Will the code compile?
 
 #include <stdio.h>
@@ -141,13 +147,17 @@ int main(){
         String x = "aaa";
         return 0;
 }
-the code will compile without any errors
+
+The code will compile without any errors
+
 17. What is the output of the following?
 
 int x = 0; 
 for (x=1; x<4; x++); 
 printf("x=%d\n", x);
+
 x=4
+
 18. Predict the output of the following snippet.
 
 A two dimensional array A is declared as int A[4][2]={0}. 
@@ -156,7 +166,9 @@ What values would be printed after execution the following statement?
 printf("%d",sizeof(A)); 
 
 Assume g++ compiler
+
 32
+
 19. Repetitive Functions
 
 Will the following code compile? If not, what will be the error?
