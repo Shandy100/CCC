@@ -5,7 +5,9 @@ Consider the following C code snippet:
 int main() {
     printf("%s", 5 + "Facsimile");
 }
+
 Mile
+
 6. Find the Output
 
 #include <stdio.h>
@@ -15,7 +17,9 @@ int main()
             printf("%d",n++?++n:n++);
 return 0;
 }
+
 1
+
 7. Find the Output
 
 #include <stdio.h>
@@ -24,16 +28,14 @@ int main()
             while(printf(1+"%d",10));
 return 0;
 }
+
 Infinite loop
+
 8. Which of the following function operators cannot be over loaded?
 
 Which of the function operator cannot be over loaded?
+
 ?:
-
-
-
-
-
 
 9. Find the Output
 
@@ -46,7 +48,9 @@ int main()
             printf("%d",a.n);
 return 0;
 }
+
 Compile time error
+
 10. Find the Output
 
 What is the output of the following code if input is 10+10 20+30:
@@ -58,7 +62,9 @@ int main()
             printf("%d %d",a,b);
 return 0;
 }
+
 10 10
+
 11. How do you declare a pointer to an array of pointers to int?
 
 How do you declare a pointer to an array of pointers to int?
