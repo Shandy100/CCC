@@ -118,7 +118,6 @@ return 0;
 5 
 
 15. Find the Output
-
 Guess the output if input is 3+4 4+5
 #include <stdio.h>
 int main()
@@ -176,6 +175,7 @@ Will the following code compile? If not, what will be the error?
 extern void print(int *ia, int sz);void print(int *ia, int sz);
 
 it will compile correctly
+
 20. Find the Output
 Guess the output
 #include <stdio.h>
@@ -185,10 +185,8 @@ int main()
             printf("%d",n>>1);
 return 0;
 }
+
 8
-
-
-
 
 21. Predict the output
 What will be the output of the following code:
@@ -224,6 +222,7 @@ int main() {
     }
     return 0;
 }
+
 AC
 
 
@@ -237,7 +236,9 @@ int main(){
    printf("%d ",*ptr);
    return 0;
 }
+
 64
+
 24. Find the Output
 Guess the output
 #include <stdio.h>
@@ -252,5 +253,6 @@ int fun(int n)
 {
 return n++;
 }
+
 0
 
