@@ -3066,3 +3066,17 @@ def maxPresentations(scheduleStart, scheduleEnd):
       	n=n+1
       	lim = sl[1][i]
 	return n
+
+
+#Are they pangrams
+#Python 2
+
+from string import lowercase, lower
+print ["not pangram", "pangram"][lowercase == ''.join(sorted(list(set(raw_input().lower())-set(' '))))]
+
+
+from string import lowercase, lower
+s = raw_input().lower() # lowercase input
+s = list(set(s)-set(' ')) # remove ' ' spaces
+s = ''.join(sorted(s)) # joined the sorted list of unique charaters
+print ["not pangram", "pangram"][lowercase == s]
