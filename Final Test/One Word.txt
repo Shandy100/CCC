@@ -254,5 +254,5 @@ int fun(int n)
 return n++;
 }
 
-0
+Ans:0
 
