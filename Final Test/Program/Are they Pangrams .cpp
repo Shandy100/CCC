@@ -1,5 +1,6 @@
 //C++14
 //Function
+//Are They pangrams
 string isPangram(vector<string> pangram) {
     string result="";
     for(auto i=0;i<pangram.size();i++)
